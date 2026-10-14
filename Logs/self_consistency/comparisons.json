@@ -1,0 +1,47 @@
+[
+  {
+    "test": "test1",
+    "consistent": true,
+    "disagreement": null,
+    "primary": {
+      "status": "ok",
+      "area_m2": 27.0546
+    },
+    "control": {
+      "status": "ok",
+      "area_m2": 27.0546
+    },
+    "difference_m2": 0.0,
+    "tolerance_m2": 0.1
+  },
+  {
+    "test": "test2a",
+    "consistent": true,
+    "disagreement": null,
+    "primary": {
+      "status": "ok",
+      "area_m2": 27.0546
+    },
+    "control": {
+      "status": "ok",
+      "area_m2": 27.0546
+    },
+    "difference_m2": 0.0,
+    "tolerance_m2": 0.1
+  },
+  {
+    "test": "test2b",
+    "consistent": true,
+    "disagreement": null,
+    "primary": {
+      "status": "ok",
+      "area_m2": 27.0546
+    },
+    "control": {
+      "status": "ok",
+      "area_m2": 27.0546016858808
+    },
+    "difference_m2": 1.685880800295081e-06,
+    "tolerance_m2": 0.1
+  }
+]

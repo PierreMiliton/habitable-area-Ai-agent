@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "area_m2": 27.0546,
+  "warnings": [
+    "L'escalier en colimaçon a été traité comme un cercle complet, mais sa forme réelle pourrait être différente."
+  ],
+  "ambiguities": []
+}

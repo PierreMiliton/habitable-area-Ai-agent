@@ -1,0 +1,68 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#111111",
+    "primaryBorderColor": "#333333",
+    "lineColor": "#333333",
+    "clusterBkg": "#ffffff",
+    "clusterBorder": "#555555",
+    "fontFamily": "Arial"
+  }
+}}%%
+
+flowchart TB
+
+    subgraph PRINCIPAL[PROJET PRINCIPAL]
+        direction LR
+
+        main[main.py<br/>prompts et lancement]
+        agent[agent.py<br/>agent PydanticAI]
+        models[models.py<br/>modèles Pydantic]
+        tools[tools.py<br/>validation et calculs]
+        geometry[geometry.py<br/>formules mathématiques]
+        prompt[System_Prompt/<br/>system_prompt.txt]
+        logs[Logs/log_agent/<br/>logs principaux]
+        llm[(LLM principal)]
+
+        main --> agent
+        prompt --> agent
+        agent --> llm
+        agent --> tools
+        tools --> models
+        tools --> geometry
+        agent --> logs
+    end
+
+    subgraph BONUS[ BONUS — SELF-CONSISTENCY ]
+        direction TB
+
+        check[self_consistency_check.py<br/>orchestration et comparaison<br/><small>réutilise agent.py, models.py et tools.py</small>]
+
+        subgraph RUNS[Exécutions comparées]
+            direction LR
+            test1[self_consistency_test1.py<br/>re-run identique]
+            test2a[self_consistency_test2a.py<br/>prompt reformulé]
+            test2b[self_consistency_test2b.py<br/>modèle différent]
+        end
+
+        reformulated[System_Prompt/<br/>system_prompt_reformulated.txt]
+        logs_bonus[Logs/self_consistency/<br/>logs des quatre exécutions]
+        llm_second[(LLM principal ou Second LLM)]
+
+        check --> test1
+        check --> test2a
+        check --> test2b
+        reformulated --> test2a
+        test2b --> llm_second
+        check --> logs_bonus
+    end
+
+    classDef principal fill:#ffffff,stroke:#333333,color:#111111,stroke-width:1px;
+    classDef bonus fill:#ffffff,stroke:#555555,color:#111111,stroke-width:1px;
+    classDef external fill:#f5f5f5,stroke:#444444,color:#111111,stroke-width:1px;
+
+    class main,agent,models,tools,geometry,prompt,logs principal;
+    class check,test1,test2a,test2b,reformulated,logs_bonus bonus;
+    class llm,llm_second external;

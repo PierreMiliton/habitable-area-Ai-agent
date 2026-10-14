@@ -1,0 +1,20 @@
+[
+  {
+    "entity": "salon_rectangle",
+    "type": "rectangle",
+    "operation": "add",
+    "operation_justification": "Dimensions extraites correctement.",
+    "dimensions": {
+      "longueur": {
+        "value": 6.0,
+        "unit": "m"
+      },
+      "largeur": {
+        "value": 4.5,
+        "unit": "m"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  }
+]

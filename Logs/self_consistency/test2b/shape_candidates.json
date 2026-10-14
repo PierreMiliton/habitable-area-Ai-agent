@@ -1,0 +1,88 @@
+[
+  {
+    "entity": "salon",
+    "type": "rectangle",
+    "operation": "add",
+    "operation_justification": "Surface principale de la pièce",
+    "dimensions": {
+      "length_m": {
+        "value": 6.0,
+        "unit": "m"
+      },
+      "width_m": {
+        "value": 450.0,
+        "unit": "cm"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  },
+  {
+    "entity": "escalier en colimaçon",
+    "type": "circle",
+    "operation": "subtract",
+    "operation_justification": "Escalier explicitement retiré de la surface habitable",
+    "dimensions": {
+      "measure_type": {
+        "value": 1.0,
+        "unit": "m"
+      },
+      "measure_m": {
+        "value": 90.0,
+        "unit": "cm"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  },
+  {
+    "entity": "trémie rectangulaire",
+    "type": "rectangle",
+    "operation": "subtract",
+    "operation_justification": "Trémie explicitement retirée de la surface habitable",
+    "dimensions": {
+      "length_m": {
+        "value": 1.1,
+        "unit": "m"
+      },
+      "width_m": {
+        "value": 0.85,
+        "unit": "m"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  },
+  {
+    "entity": "partie du mur",
+    "type": "unknown",
+    "operation": "ignore",
+    "operation_justification": "Mesure explicitement erronée et à ignorer",
+    "dimensions": {
+      "unit": {
+        "value": 12.0,
+        "unit": "in"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  },
+  {
+    "entity": "bow-window",
+    "type": "circle",
+    "operation": "add",
+    "operation_justification": "Bow-window explicitement ajouté en demi-cercle",
+    "dimensions": {
+      "measure_m": {
+        "value": 1.5,
+        "unit": "m"
+      },
+      "measure_type": {
+        "value": 1.0,
+        "unit": "m"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 0.5
+  }
+]

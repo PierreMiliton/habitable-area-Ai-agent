@@ -1,0 +1,62 @@
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'background': '#ffffff',
+    'primaryColor': '#ffffff',
+    'primaryTextColor': '#0f172a',
+    'primaryBorderColor': '#334155',
+    'lineColor': '#475569',
+    'secondaryColor': '#ffffff',
+    'tertiaryColor': '#ffffff',
+    'clusterBkg': '#ffffff',
+    'clusterBorder': '#cbd5e1'
+  }
+}}%%
+flowchart TD
+    %% =========================================================================
+    %% MINIMALIST AGENT & SURROUNDING TOOLS ARCHITECTURE (WHITE BACKGROUND)
+    %% =========================================================================
+
+    classDef default fill:#ffffff,stroke:#64748b,stroke-width:1.5px,color:#0f172a;
+    classDef agentCore fill:#ffffff,stroke:#0f172a,stroke-width:3px,color:#0f172a;
+    classDef ioNode fill:#ffffff,stroke:#94a3b8,stroke-width:1.5px,stroke-dasharray: 4 4,color:#334155;
+    classDef toolNode fill:#ffffff,stroke:#2563eb,stroke-width:1.5px,color:#0f172a;
+    classDef calcNode fill:#ffffff,stroke:#059669,stroke-width:1.5px,color:#0f172a;
+
+    %% Client Input & Final Output
+    INPUT["Input: French Inspection Prompt"]:::ioNode
+    OUTPUT["Output: FinalResult (status: ok / needs_human_review, area_m2)"]:::ioNode
+
+    %% Agent at the Center
+    AGENT["AGENT (PydanticAI LLM Core)"]:::agentCore
+
+    %% Surrounding Tools (Steps 1 & 2)
+    T1["Step 1: validate_scene(shapes) - Guardrail & Completeness"]:::toolNode
+    T2["Step 2: convert_dimension(dimension) - Unit Normalization to Meters"]:::toolNode
+
+    %% Surrounding Tools (Step 3: Geometry Calculation Group)
+    subgraph S3["Step 3: Geometric Calculation Tools"]
+        T_RECT["calculate_rectangle(entity, length, width)"]:::calcNode
+        T_TRI["calculate_triangle(entity, base, height)"]:::calcNode
+        T_TRAP["calculate_trapezoid(entity, base1, base2, height)"]:::calcNode
+        T_CIRC["calculate_circle(entity, measure, fraction)"]:::calcNode
+        T_KNOWN["calculate_known_area(entity, area_m2)"]:::calcNode
+    end
+
+    %% Surrounding Tools (Step 4: Aggregation)
+    T4["Step 4: aggregate_areas(areas, operations) - Net Surface Sum"]:::toolNode
+
+    %% Flow through Center Agent
+    INPUT --> AGENT
+
+    AGENT <-->|"1. Validate scene"| T1
+    AGENT <-->|"2. Normalize units"| T2
+    AGENT <-->|"3. Compute shapes"| S3
+    AGENT <-->|"4. Aggregate total"| T4
+
+    AGENT --> OUTPUT
+
+    %% Direct Sequence Flow between tools
+    T1 -.->|"Valid shapes"| T2
+    T2 -.->|"Meters"| S3
+    S3 -.->|"Area results"| T4

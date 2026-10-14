@@ -1,0 +1,221 @@
+{
+  "case_1": [
+    {
+      "entity": "cuisine (surface au sol)",
+      "type": "trapezoid",
+      "operation": "add",
+      "operation_justification": "",
+      "dimensions": {
+        "height": {
+          "value": 7.53,
+          "unit": "m"
+        },
+        "base1": {
+          "value": 3.56,
+          "unit": "m"
+        },
+        "base2": {
+          "value": 5.26,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "triangle à retrancher",
+      "type": "triangle",
+      "operation": "subtract",
+      "operation_justification": "",
+      "dimensions": {
+        "base": {
+          "value": 1.25,
+          "unit": "m"
+        },
+        "height": {
+          "value": 0.8,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "quart de cercle à retrancher",
+      "type": "circle",
+      "operation": "subtract",
+      "operation_justification": "",
+      "dimensions": {
+        "radius": {
+          "value": 0.8,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 0.25
+    },
+    {
+      "entity": "escalier à retrancher",
+      "type": "known_area",
+      "operation": "subtract",
+      "operation_justification": "",
+      "dimensions": {},
+      "known_area_m2": 3.76,
+      "fraction": 1.0
+    },
+    {
+      "entity": "dégagement à retrancher",
+      "type": "rectangle",
+      "operation": "subtract",
+      "operation_justification": "",
+      "dimensions": {
+        "length": {
+          "value": 0.7,
+          "unit": "m"
+        },
+        "width": {
+          "value": 1.2,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    }
+  ],
+  "case_2": [
+    {
+      "entity": "chambre principale",
+      "type": "rectangle",
+      "operation": "add",
+      "operation_justification": "",
+      "dimensions": {
+        "length": {
+          "value": 4.2,
+          "unit": "m"
+        },
+        "width": {
+          "value": 3.1,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "niche murale",
+      "type": "rectangle",
+      "operation": "uncertain",
+      "operation_justification": "Le texte indique 'on ajoute', mais une niche murale peut ne pas être incluse dans la surface habitable selon les normes.",
+      "dimensions": {
+        "length": {
+          "value": 0.6,
+          "unit": "m"
+        },
+        "width": {
+          "value": 0.45,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "conduit de cheminée",
+      "type": "circle",
+      "operation": "subtract",
+      "operation_justification": "Le conduit est explicitement mentionné comme à soustraire.",
+      "dimensions": {
+        "diameter": {
+          "value": 0.35,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "arrondi dans l'angle nord-est",
+      "type": "unknown",
+      "operation": "subtract",
+      "operation_justification": "La forme et les dimensions ne sont pas précisées.",
+      "dimensions": {},
+      "known_area_m2": null,
+      "fraction": 1.0
+    }
+  ],
+  "case_3": [
+    {
+      "entity": "salon",
+      "type": "rectangle",
+      "operation": "add",
+      "operation_justification": "Dimensions fournies après conversion.",
+      "dimensions": {
+        "length": {
+          "value": 6.0,
+          "unit": "m"
+        },
+        "width": {
+          "value": 4.5,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "escalier en colimaçon",
+      "type": "circle",
+      "operation": "subtract",
+      "operation_justification": "Surface à retrancher explicitement mentionnée.",
+      "dimensions": {
+        "radius": {
+          "value": 0.9,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "trémie rectangulaire",
+      "type": "rectangle",
+      "operation": "subtract",
+      "operation_justification": "Surface à retrancher explicitement mentionnée.",
+      "dimensions": {
+        "length": {
+          "value": 1.1,
+          "unit": "m"
+        },
+        "width": {
+          "value": 0.85,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "mesure du mur à 12 pouces",
+      "type": "unknown",
+      "operation": "ignore",
+      "operation_justification": "Mesure explicitement considérée comme une erreur à ignorer.",
+      "dimensions": {},
+      "known_area_m2": null,
+      "fraction": 1.0
+    },
+    {
+      "entity": "bow-window en demi-cercle",
+      "type": "circle",
+      "operation": "add",
+      "operation_justification": "Surface à ajouter explicitement mentionnée comme bow-window.",
+      "dimensions": {
+        "radius": {
+          "value": 1.5,
+          "unit": "m"
+        }
+      },
+      "known_area_m2": null,
+      "fraction": 0.5
+    }
+  ]
+}

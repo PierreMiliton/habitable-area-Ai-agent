@@ -1,0 +1,27 @@
+{
+  "case_1": {
+    "status": "ok",
+    "area_m2": 27.604645175425638,
+    "warnings": [],
+    "ambiguities": []
+  },
+  "case_2": {
+    "status": "needs_human_review",
+    "area_m2": null,
+    "warnings": [
+      "Le conduit de cheminée a été marqué pour soustraction mais nécessite une validation humaine pour confirmation."
+    ],
+    "ambiguities": [
+      "La niche murale est explicitement mentionnée comme ajoutée, mais son inclusion dans la surface habitable est incertaine selon les normes.",
+      "L'arrondi dans l'angle nord-est n'a pas de dimensions précises et ne peut pas être calculé."
+    ]
+  },
+  "case_3": {
+    "status": "ok",
+    "area_m2": 27.05,
+    "warnings": [
+      "mesure du mur à 12 pouces: mesure explicitement ignorée."
+    ],
+    "ambiguities": []
+  }
+}

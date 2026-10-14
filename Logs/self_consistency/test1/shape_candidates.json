@@ -1,0 +1,66 @@
+[
+  {
+    "entity": "salon",
+    "type": "rectangle",
+    "operation": "add",
+    "operation_justification": "",
+    "dimensions": {
+      "length": {
+        "value": 6.0,
+        "unit": "m"
+      },
+      "width": {
+        "value": 4.5,
+        "unit": "m"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  },
+  {
+    "entity": "escalier en colimaçon",
+    "type": "circle",
+    "operation": "subtract",
+    "operation_justification": "Surface à retrancher explicitement mentionnée.",
+    "dimensions": {
+      "radius": {
+        "value": 0.9,
+        "unit": "m"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  },
+  {
+    "entity": "trémie rectangulaire",
+    "type": "rectangle",
+    "operation": "subtract",
+    "operation_justification": "Surface à retrancher explicitement mentionnée.",
+    "dimensions": {
+      "length": {
+        "value": 1.1,
+        "unit": "m"
+      },
+      "width": {
+        "value": 0.85,
+        "unit": "m"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 1.0
+  },
+  {
+    "entity": "bow-window en demi-cercle",
+    "type": "circle",
+    "operation": "add",
+    "operation_justification": "Surface à ajouter explicitement mentionnée comme bow-window.",
+    "dimensions": {
+      "radius": {
+        "value": 1.5,
+        "unit": "m"
+      }
+    },
+    "known_area_m2": null,
+    "fraction": 0.5
+  }
+]
